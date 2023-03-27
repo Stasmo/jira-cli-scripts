@@ -1,0 +1,5 @@
+#!/bin/bash
+
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+
+jira issue create -tTask -s"${1}" -T $SCRIPT_DIR/task-template.tmpl --web -a$(jira me)
